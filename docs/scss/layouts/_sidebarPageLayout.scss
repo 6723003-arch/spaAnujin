@@ -1,0 +1,65 @@
+// layouts/sidebarPageLayout.js
+.app-mobile-sidebar {
+  display: none;
+  border-bottom: 1px solid var(--border);
+  background: var(--sidebar-bg);
+  padding: 1rem 1.25rem;
+}
+
+.app-sidebar-icon-btn {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--hover-bg);
+  font-size: 1rem;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.app-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s ease;
+  z-index: 39;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.app-shell {
+  display: flex;
+  height: calc(100vh - 4rem);
+}
+
+.app-sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
+  border-right: 1px solid var(--border);
+  background: var(--sidebar-bg);
+  padding: 1.25rem 1rem 2rem;
+  height: calc(100vh - 4rem);
+  position: sticky;
+  top: 4rem;
+  overflow-x: hidden; // доод талын хэвтээ scrollbar-ыг арилгана
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+.app-main-content {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  background: var(--page-bg);
+}
+
+.app-sidebar-mobile-head {
+  display: none;
+}

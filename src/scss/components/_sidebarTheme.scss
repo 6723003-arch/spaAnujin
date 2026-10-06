@@ -1,0 +1,33 @@
+// Light theme-ийн нэмэлт хувьсагчууд
+:root {
+  --card-bg: #ffffff;
+  --input-bg: #f7f8fa;
+  --border-strong: #cfd3dc;
+  --focus-ring: rgba(43, 172, 115, 0.22);
+}
+
+// Dark theme-ийн хувьсагчууд
+@mixin app-dark-vars {
+  --page-bg: #16181d;
+  --sidebar-bg: #1a1c23;
+  --card-bg: #20232b;
+  --input-bg: #13151a;
+  --border: #2a2d37;
+  --border-strong: #3b3f4c;
+  --text-main: #e6e8ef;
+  --text-soft: #9aa0ae;
+  --hover-bg: #262a34;
+  --active-bg: rgba(43, 172, 115, 0.14);
+  --focus-ring: rgba(43, 172, 115, 0.28);
+  --overlay: rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include app-dark-vars;
+  }
+}
+
+:root[data-theme="dark"] {
+  @include app-dark-vars;
+}

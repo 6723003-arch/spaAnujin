@@ -1,0 +1,195 @@
+// components/searchFoodNameSidebar.js, searchSettingsSidebar.js, searchFoodGroupListSidebar.js
+.app-sidebar {
+  // ---------- Хэсгийн гарчиг: "Search by food name:" гэх мэт ----------
+  .app-menu-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-soft);
+    margin: 1.75rem 0 0.7rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  // ---------- Хайлтын input ба товч ----------
+  .field:not(:last-child) {
+    margin-bottom: 0.6rem;
+  }
+
+  .input,
+  .input.is-primary {
+    height: 2.75rem;
+    border-radius: 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    box-shadow: none;
+
+    &::placeholder {
+      color: var(--text-soft);
+    }
+
+    &:hover {
+      border-color: var(--border-strong);
+    }
+
+    &:focus,
+    &:focus-visible {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px var(--focus-ring);
+    }
+  }
+
+  .control.has-icons-left .icon {
+    color: var(--text-soft);
+  }
+
+  .button.is-fullwidth {
+    height: 2.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  // ---------- Бүлгүүдийн жагсаалт ----------
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    li {
+      margin: 0;
+    }
+  }
+
+  // Бүлгийн нэр: Nutritions, Cereals and Cereal products гэх мэт
+  .app-toggle-sublist {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: normal; // урт нэр мөр нугалж, хэвтээ scroll гарахгүй
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease;
+
+    // баруун талын сум (chevron)
+    &::after {
+      content: "";
+      flex: none;
+      width: 0.45rem;
+      height: 0.45rem;
+      margin-right: 0.15rem;
+      border-right: 2px solid var(--text-soft);
+      border-bottom: 2px solid var(--text-soft);
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      background: var(--hover-bg);
+      color: var(--text-main);
+    }
+
+    // жагсаалт нээлттэй үед
+    &:has(+ .app-sublist:not(.is-hidden)) {
+      background: var(--active-bg);
+      border-color: var(--green);
+
+      &::after {
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  // Нээгдсэн дэд жагсаалт
+  .menu-list .app-sublist {
+    margin: 0.4rem 0 0.4rem 0.75rem;
+    padding: 0 0 0 0.6rem;
+    border-left: 2px solid var(--border);
+  }
+
+  // Хүнсний нэр: Barley flour, whole grain гэх мэт (checkbox)
+  .app-sublist-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: var(--text-main);
+    white-space: normal;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--hover-bg);
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    span {
+      position: relative;
+      padding-left: 1.6rem;
+
+      // checkbox-ийн хайрцаг
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.12em;
+        width: 1.05rem;
+        height: 1.05rem;
+        border: 2px solid var(--border-strong);
+        border-radius: 5px;
+        background: var(--input-bg);
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease;
+      }
+
+      // ✓ тэмдэг
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0.36rem;
+        top: 0.28em;
+        width: 0.3rem;
+        height: 0.6rem;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(45deg) scale(0);
+        transition: transform 0.15s ease;
+      }
+    }
+
+    input[type="checkbox"]:checked + span {
+      color: var(--green);
+      font-weight: 600;
+
+      &::before {
+        background: var(--green);
+        border-color: var(--green);
+      }
+
+      &::after {
+        transform: rotate(45deg) scale(1);
+      }
+    }
+  }
+}

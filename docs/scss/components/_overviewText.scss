@@ -1,0 +1,23 @@
+.app-overview-text {
+  height: auto;
+  max-height: none; // ← 420px-ийг авлаа
+  overflow: visible; // ← scroll-ийг авлаа
+}
+
+.app-txt {
+  font-size: clamp(0.85rem, 0.5vw + 0.55rem, 0.95rem);
+  line-height: 1.7;
+  color: var(--bulma-text); // ← өөрчилсөн: dark mode-д автоматаар цайвар
+  text-align: left; // ← justify-г авлаа (Монгол хэлэнд зай жигд биш болдог)
+  overflow-wrap: break-word;
+}
+
+// scrollbar хэлбэржүүлэх
+.app-overview-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app-overview-text::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 999px;
+}

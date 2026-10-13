@@ -13,6 +13,10 @@ export const translations = {
     overview: {
       title: "Мэдээллийн сангийн танилцуулга",
     },
+    books: {
+      title: "Ном",
+      view: "Үзэх",
+    },
     search: {
       title: "Хүнс хайх",
     },
@@ -131,6 +135,10 @@ export const translations = {
     },
     overview: {
       title: "Food Composition Database Introduction",
+    },
+    books: {
+      title: "Books",
+      view: "View",
     },
     search: {
       title: "Food search",

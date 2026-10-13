@@ -23065,6 +23065,7 @@ has-background-danger.is-hoverable:active {
 @media screen and (max-width: 768px) {
   .app-shell {
     display: block; /* Sidebar + main layout-ийг stack болгоно */
+    height: auto;
   }
   .app-mobile-sidebar {
     display: block; /* Mobile дээр гарч ирэх ↪ button */

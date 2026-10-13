@@ -23138,4 +23138,11 @@ has-background-danger.is-hoverable:active {
   color-scheme: dark;
 }
 
+.table tr.has-background-light,
+.table tr.has-background-light td,
+.table tr.has-background-light th {
+  background-color: var(--hover-bg) !important;
+  color: var(--text-main) !important;
+}
+
 /*# sourceMappingURL=main.css.map */
